@@ -1,0 +1,31 @@
+@using JonBlog.Core
+@page "/fetchdata"
+@inject HttpClient Http
+
+@if (pageData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <style>
+            @pageData.Css
+        </style>
+
+        <h1 class="main-title">@pageData.Title</h1>
+        <h2 class="article-date">@pageData.LastUpdateDate.ToShortDateString()</h2>
+        <div class="main-container">
+            @((MarkupString)pageData.Html)
+        </div>
+    </div>
+}
+
+@code {
+    private PageData pageData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        pageData = await Http.GetFromJsonAsync<PageData>("sample-data/pagedata.json");
+    }
+}

@@ -1,0 +1,7 @@
+﻿{
+  "pageId": 1,
+  "title": "Article Title Here",
+  "html": "<main class=\"main\"><h2>Article Subtitle here</h2><p class=\"main-content\">Article Content here <span class=\"emphasis\"> something emphasized here</span></p></main>",
+  "css": ".main-content {color: red;} .emphasis {font-weight: bold;}",
+  "lastUpdateDate": "2020-06-01T00:00:00Z"
+}
